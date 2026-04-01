@@ -39,7 +39,7 @@ for arg in $@ ; do
 	else
 		
 		TEM=$(  sha256sum $arg | awk '{print $1}' )
-		echo $TEM
+		#echo $TEM
 		add $TEM $arg
 	fi
 done
