@@ -3,6 +3,6 @@
 
 # HOW TO  USE
 #### 1. clone the repo
-#### 2. run script duplifinder.sh as : duplifinder.sh <PATH_1> <PATH_2> ...
+#### 2. run script duplifinder.sh as : ./duplifinder.sh <PATH_1> <PATH_2> ...
 #### 3. any number of paths can be given
 #### 4. you will get exact matches and similarly worded matches!!
