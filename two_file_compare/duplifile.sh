@@ -61,8 +61,10 @@ for key in "${!maps[@]}"; do
 	printf "\n"
 done
 
-
-
-
-
+if [  $(ls -1 ./two_file_compare/tempfolder | wc -l) -ne 0 ]; then
+	# deleting temp files
+	for files in ./two_file_compare/tempfolder/* ; do
+		rm $files
+	done
+fi
 
