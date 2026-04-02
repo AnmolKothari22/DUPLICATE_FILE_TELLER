@@ -27,12 +27,12 @@ add() {
 
 for arg in $@ ; do
 	if [ -d $arg ]; then
-		echo "directory given"
+		#echo "directory given"
 		for arg2 in $arg/* ; do
-			echo $arg2
+			#echo $arg2
 			if [ -f $arg2 ]; then
 				TEM=$(  sha256sum $arg2 | awk '{print $1}' )
-				echo $TEM
+				#echo $TEM
 				add $TEM $arg2
 			fi
 		done	
@@ -45,8 +45,20 @@ for arg in $@ ; do
 done
 
 for key in "${!maps[@]}"; do
-	declare -n ref=${maps[$key]}
-	echo "$key -> ${ref[@]}"
+    declare -n ref="${maps[$key]}"
+
+    echo -n "same files on following path ->"
+
+    for i in "${!ref[@]}"; do
+        val="${ref[$i]}"
+
+        if [[ "$val" == *:* ]]; then
+            ref[$i]="${val#*:}"   # remove everything up to first colon
+        fi
+
+        echo  -n " ${ref[$i]} , "
+    done
+	printf "\n"
 done
 
 

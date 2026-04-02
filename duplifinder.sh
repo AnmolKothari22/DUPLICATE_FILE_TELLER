@@ -6,6 +6,9 @@ if [ "$#" -eq 0 ]; then
 fi
 
 echo "exact matches are in same line"
+# formating is left 
+# present it nicely ..without hashes
+#
 
 ./two_file_compare/duplifile.sh $@
 
